@@ -21,7 +21,7 @@ def run():
         station, distance = result
         furthest.append((station.name, station.town, distance))
     
-    print("Ten closest stations from {}:".format(location_coord))
+    print("\nTen closest stations from {}:".format(location_coord))
     print(closest)
     print("\nTen furthest stations from {}:".format(location_coord))
     print(furthest)

@@ -31,10 +31,21 @@ def haversine(coord1, coord2):
     return distance
 
 def stations_by_distance(stations, p):
-    """This submodule returns a list of (station, distance) tuples sorted by distance."""
+    """Returns a list of (station, distance) tuples sorted by distance given a list of stations and an origin coordinate."""
 
     station_distance_list = list()
     for station in stations:
         distance = haversine(station.coord, p)
         station_distance_list.append((station, distance))
     return sorted_by_key(station_distance_list, 1)
+
+def stations_within_radius(stations, centre, r):
+    """Returns a list of stations within distance in km 'r' from coordinate 'centre' given list of input stations."""
+
+    valid_stations = list()
+    for station in stations:
+        distance = haversine(station.coord, centre)
+        if distance < r:
+            valid_stations.append(station)
+
+    return valid_stations
