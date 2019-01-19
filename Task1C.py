@@ -14,8 +14,8 @@ def run():
     for station in valid_stations:
         station_names.append(station.name)
 
-    print("\nThe following stations are within {}km of {}:".format(radius, location_coord))
-    print(station_names)
+    print("\nThe following stations are within {}km of {}:\n".format(radius, location_coord))
+    print(sorted(station_names))
 
 if __name__ == "__main__":
     print("*** Task 1C: CUED Part IA Flood Warning System ***")
