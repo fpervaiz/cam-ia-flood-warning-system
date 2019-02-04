@@ -76,3 +76,18 @@ def stations_by_river(stations):
 
     return river_dict
        
+
+def rivers_by_station_number(stations, N):
+    "Returns a list of tuples of the N greatest rivers by number of stations"
+    stat_dict = stations_by_river(stations)
+    station_numbers = {w:len(d) for w, d in stat_dict.items()}
+    station_numbers_by_value = sorted(station_numbers.items(), key=lambda wd: wd[1], reverse=True)
+    for n in range(len(station_numbers_by_value)):
+        if station_numbers_by_value[N+n][1] > station_numbers_by_value[N+n+1][1]:
+            y = station_numbers_by_value[:N+n]
+            break
+        else:
+            pass
+    return y
+
+    
