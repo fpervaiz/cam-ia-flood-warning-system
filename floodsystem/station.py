@@ -53,3 +53,4 @@ def inconsistent_typical_range_stations(stations):
             inconsistent_stations.append(station)
 
     return inconsistent_stations
+

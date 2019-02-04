@@ -49,3 +49,30 @@ def stations_within_radius(stations, centre, r):
             valid_stations.append(station)
 
     return valid_stations
+
+def rivers_with_stations(stations):
+    """Returns a set with the names of any rivers with a monitoring station"""
+    counter = 0
+    valid_rivers = set()
+    while counter < len(stations):
+        valid_rivers.add(stations[counter].river)
+        counter += 1
+        if counter > 200000:
+            break
+        else:
+            pass
+        
+    return valid_rivers
+
+def stations_by_river(stations):
+    """Returns a dict that maps river names (as keys) to a list of station objects on the river"""
+
+    river_dict = dict()
+    for station in stations:
+        if station.river in river_dict:
+            river_dict[station.river].append(station.name)
+        else:
+            river_dict[station.river] = [station.name]
+
+    return river_dict
+       

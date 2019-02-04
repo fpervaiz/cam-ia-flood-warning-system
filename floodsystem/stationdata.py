@@ -62,7 +62,6 @@ def build_station_list(use_cache=True):
 
     return stations
 
-
 def update_water_levels(stations):
     """Attach level data contained in measure_data to stations"""
 

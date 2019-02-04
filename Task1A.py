@@ -20,6 +20,7 @@ def run():
                 'Bourton Dickler', 'Surfleet Sluice', 'Gaw Bridge'
         ]:
             print(station)
+            print(type(station))
 
 
 if __name__ == "__main__":
