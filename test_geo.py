@@ -18,6 +18,6 @@ def test_stations_by_distance():
 
 def test_stations_within_radius():
     """Test stations within radius function callable"""
-    x = stations_within_radius([], (0,0), 10
+    x = stations_within_radius([], (0,0), 10)
     assert x != None
 
