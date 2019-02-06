@@ -11,5 +11,13 @@ def test_haversine():
 
     assert haversine(c1, c2) == known_distance
 
+def test_stations_by_distance():
+    """Test stations by distance function callable"""
+    x = stations_by_distance([], (0,0))
+    assert x != None
 
+def test_stations_within_radius():
+    """Test stations within radius function callable"""
+    x = stations_within_radius([], (0,0), 10)
+    assert x != None
 

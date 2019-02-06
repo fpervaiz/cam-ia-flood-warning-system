@@ -17,7 +17,11 @@ test:
   - python Task1B.py
   - python Task1C.py
   - python Task1D.py
+<<<<<<< HEAD
   - python Task1E.py	
+=======
+  - python Task1E.py
+>>>>>>> fd564c5a5212af857944e0a1e0957eb2de116d25
   - python Task1F.py
   - python Task2A.py
   - python Task2D.py
