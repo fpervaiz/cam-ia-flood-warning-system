@@ -20,13 +20,13 @@ def run():
     # Demonstrating stations_by_river function    
     rivers_dict = stations_by_river(stations)
 
-    aire_stations = rivers_dict["River Aire"]
-    cam_stations = rivers_dict["River Cam"]
-    thames_stations = rivers_dict["River Thames"]
+    aire_stations = sorted(rivers_dict["River Aire"])
+    cam_stations = sorted(rivers_dict["River Cam"])
+    thames_stations = sorted(rivers_dict["River Thames"])
 
-    print('Stations on the River Aire: ' + str(aire_stations))
-    print('Stations on the River Cam: ' + str(cam_stations))
-    print('Stations on the Thames: ' + str(thames_stations))
+    print('\nStations on the River Aire: ' + str(aire_stations))
+    print('\nStations on the River Cam: ' + str(cam_stations))
+    print('\nStations on the Thames: ' + str(thames_stations))
 
 if __name__ == "__main__":
     print("*** Task 1D: CUED Part IA Flood Warning System ***")
