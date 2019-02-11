@@ -1,3 +1,6 @@
+"""This module provides functions for calculating polynomial best fits
+for historical data"""
+
 from matplotlib.dates import date2num
 
 import numpy as np
