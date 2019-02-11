@@ -1,14 +1,14 @@
 from floodsystem.flood  import stations_highest_rel_level
 from floodsystem.stationdata import build_station_list, update_water_levels
 from floodsystem.datafetcher import fetch_measure_levels
-from floodsystem.analysis import level_is_rising, polyfit
+from floodsystem.analysis import level_is_rising, polyfit, get_threat_level
 
 import datetime
 
 def run():
     stations = build_station_list()
     update_water_levels(stations)
-    highest_stations = stations_highest_rel_level(stations, 5)
+    highest_stations = stations_highest_rel_level(stations, 25)
 
     for station_tuple in highest_stations:
         station = station_tuple[0]
@@ -24,15 +24,9 @@ def run():
         # High: >75% of typical max and rising or above typical max and falling
         # Moderate: >75% of typical max and falling or >50% of typical max and rising
         # Low: if none of above
+        # Then send email/notification?
 
-        if rel_level >= 1 and rising or rel_level >= 1.5:
-            threat = "Severe"
-        elif rel_level >= 0.75 and rising or rel_level >=1 and not rising:
-            threat = "High"
-        elif rel_level >= 0.75 and not rising or rel_level >= 0.5 and rising:
-            threat = "Moderate"
-        else:
-            threat = "Low"
+        threat = get_threat_level(rising, rel_level)
         print(station.name, threat)
 
 if __name__ == "__main__":
