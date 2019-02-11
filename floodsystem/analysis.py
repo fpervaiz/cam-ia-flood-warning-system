@@ -7,6 +7,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def polyfit(dates, levels, p):
+    """Finds the best-fit polynomial of degree p and returns the polynomial and date-shift"""
     x = date2num(dates)
     y = levels
     d0 = x[0]
@@ -14,3 +15,13 @@ def polyfit(dates, levels, p):
     poly = np.poly1d(p_coeff)
 
     return (poly, d0)
+
+def level_is_rising(poly, d0, dates):
+    """Returns true if the gradient of a given best-fit polynomial at a given date is rising"""
+    x = date2num(dates[-1])
+    grad_poly = np.polyder(poly)
+    grad = grad_poly(x - d0)
+    if grad > 0:
+        return True
+    else:
+        return False
