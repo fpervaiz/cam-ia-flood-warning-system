@@ -25,11 +25,11 @@ def stations_highest_rel_level(stations, N):
     stations_rel_level = []
 
     for station in stations:
-        relative_level = station.rel_water_level()
+        relative_level = station.relative_water_level()
 
         # only append if relative level is present
         if relative_level != None:
-            stations_rel_level.append((station.name, relative_level))
+            stations_rel_level.append((station, relative_level))
 
         stations_rel_level.sort(key=lambda x: x[1], reverse=True)
         flooded_stations = stations_rel_level[:N]
