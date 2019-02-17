@@ -11,7 +11,7 @@ def run():
     flooded_stations=stations_highest_rel_level(stations,N)
     
     for station in flooded_stations:
-        print(station[0], station[1])
+        print(station[0].name, station[1])
 
 if __name__ == "__main__":
     print("*** Task 2C: CUED Part IA Flood Warning System *** \n")
