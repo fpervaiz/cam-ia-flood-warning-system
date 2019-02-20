@@ -18,6 +18,6 @@ def test_stations_highest_rel_level():
     chosen_station = choice(stations)
     chosen_station.latest_level = 999
     highest_stations = stations_highest_rel_level(stations, 1)
-    assert highest_stations[0][0] == chosen_station.name
+    assert highest_stations[0][0].name == chosen_station.name
     assert highest_stations[0][1] == chosen_station.latest_level
     assert len(highest_stations) == 1

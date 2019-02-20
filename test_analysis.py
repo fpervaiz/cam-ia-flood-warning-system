@@ -23,7 +23,7 @@ def test_polyfit():
 
 def test_level_is_rising():
     dates = np.array((1, 2, 3))
-    poly = np.poly1d(np.array(1, 0, 0))
+    poly = np.poly1d(np.array((1, 0, 0))
     d0 = 0
     assert level_is_rising(poly, d0, dates)
 
