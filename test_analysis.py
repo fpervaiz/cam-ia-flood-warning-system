@@ -23,7 +23,7 @@ def test_polyfit():
     assert d0
 
 def test_level_is_rising():
-    dates = np.array((date2num(datetime(2019, 1, 1)), date2num(datetime(2019, 1, 2)), date2num(datetime(2019,1, 3))))
+    dates = [date2num(datetime(2019, 1, 1)), date2num(datetime(2019, 1, 2)), date2num(datetime(2019,1, 3))]
     levels = [1, 4, 9]
     degree = 4
     poly, d0 = polyfit(dates, levels, degree)
