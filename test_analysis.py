@@ -4,7 +4,7 @@ from floodsystem.stationdata import build_station_list, update_water_levels
 from floodsystem.datafetcher import fetch_measure_levels
 from floodsystem.analysis import level_is_rising, polyfit, get_threat_level
 from random import choice
-from datetime import datetime
+from datetime import datetime, timedelta
 from matplotlib.dates import date2num
 
 import numpy as np
@@ -17,7 +17,7 @@ station = choice(stations)
 def test_polyfit():
     dt = 10
     degree = 4
-    dates, levels = fetch_measure_levels(station.measure_id, dt=datetime.timedelta(days=dt))
+    dates, levels = fetch_measure_levels(station.measure_id, dt=timedelta(days=dt))
     poly, d0 = polyfit(dates, levels, degree)
     assert poly
     assert d0
