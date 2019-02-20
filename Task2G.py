@@ -12,7 +12,7 @@ recipients = [('Finn Chapman', 'fac33@cam.ac.uk', (52.21, 0.103), 20),
 ('Faizaan Pervaiz', 'fp361@cam.ac.uk', (51.86, -2.23), 20)]
 
 def run():
-    stations = build_station_list(use_cache=True)
+    stations = build_station_list()
     update_water_levels(stations)
 
     for recipient in recipients:

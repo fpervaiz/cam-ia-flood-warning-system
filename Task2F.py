@@ -16,7 +16,11 @@ def run():
         dt = 2
         degree = 4
         dates, levels = fetch_measure_levels(station.measure_id, dt=datetime.timedelta(days=dt))
-        plot_water_level_with_fit(station, dates, levels, degree)
+        try:
+                plot_water_level_with_fit(station, dates, levels, degree)
+        except IndexError:
+                print(dates, levels)
+                continue
 
 if __name__ == "__main__":
     print("*** Task 2F: CUED Part IA Flood Warning System ***")
