@@ -22,3 +22,5 @@ def test_stations_highest_rel_level():
     assert highest_stations[0][0].name == chosen_station.name
     assert highest_stations[0][1] == chosen_rel_level
     assert len(highest_stations) == 1
+
+

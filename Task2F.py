@@ -19,7 +19,7 @@ def run():
         try:
                 plot_water_level_with_fit(station, dates, levels, degree)
         except IndexError:
-                print(dates, levels)
+                print("{} station level data missing, skipping...".format(station.name))
                 continue
 
 if __name__ == "__main__":
